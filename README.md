@@ -97,6 +97,22 @@ devicebase -s <serial> input "Hello World"
 devicebase -s <serial> clear-text
 ```
 
+### Device Management
+
+```bash
+# List all devices
+devicebase list-devices
+
+# Filter by keyword (brand/model/serial/name)
+devicebase list-devices --keyword "iPhone"
+
+# Filter by state (busy/free/offline)
+devicebase list-devices --state free
+
+# Combine filters
+devicebase list-devices --keyword "Samsung" --state busy
+```
+
 ### Device Information
 
 ```bash

@@ -17,5 +17,6 @@ func RegisterCommands(root *cobra.Command) {
 		newDumpHierarchyCmd(),
 		newScreenshotCmd(),
 		newDeviceInfoCmd(),
+		newListDevicesCmd(),
 	)
 }

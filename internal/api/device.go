@@ -1,6 +1,9 @@
 package api
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Point struct {
 	X int `json:"x"`
@@ -72,4 +75,27 @@ func (c *Client) DumpHierarchy(serial string) ([]byte, error) {
 
 func (c *Client) Screenshot(serial string) ([]byte, error) {
 	return c.Post(fmt.Sprintf("/v1/screen/%s", serial), nil)
+}
+
+type ListDevicesRequest struct {
+	Keyword *string
+	State   *string
+}
+
+func (c *Client) ListDevices(req ListDevicesRequest) ([]byte, error) {
+	path := "/v1/devices"
+	params := make([]string, 0)
+
+	if req.Keyword != nil {
+		params = append(params, "keyword="+*req.Keyword)
+	}
+	if req.State != nil {
+		params = append(params, "state="+*req.State)
+	}
+
+	if len(params) > 0 {
+		path += "?" + strings.Join(params, "&")
+	}
+
+	return c.Get(path)
 }
