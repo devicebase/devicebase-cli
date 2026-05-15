@@ -17,7 +17,7 @@ func newScreenshotCmd() *cobra.Command {
 		Args:  cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			data, err := client.Screenshot(GetSerial())
+			data, err := client.Screenshot(mustGetSerial())
 			if err != nil {
 				fmt.Fprintln(os.Stderr, "Error:", err)
 				os.Exit(1)

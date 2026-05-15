@@ -23,7 +23,7 @@ func newTapCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			client := mustCreateClient()
-			printResult(client.Tap(GetSerial(), p))
+			printResult(client.Tap(mustGetSerial(), p))
 		},
 	}
 }

@@ -6,7 +6,7 @@ set -euo pipefail
 # Usage: curl -fsSL https://git.uusense.cn/devicebase/devicebase-cli/releases/latest/download/install.sh | bash
 # =============================================================================
 
-VERSION="${VERSION:-v2026.5.10}"
+VERSION="${VERSION:-v2026.5.15}"
 BASE_URL="${BASE_URL:-https://github.com/uusense/devicebase-cli/releases}"
 INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
 BINARY_NAME="devicebase"

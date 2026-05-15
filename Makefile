@@ -2,7 +2,7 @@
 set -euo pipefail
 
 APP_NAME="devicebase"
-VERSION="2026.4.1"
+VERSION="2026.5.15"
 BUILD_DIR="build"
 MAIN_PKG="./cmd/devicebase"
 

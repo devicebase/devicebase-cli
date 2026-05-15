@@ -10,7 +10,7 @@ func newBackCmd() *cobra.Command {
 		Args:  cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			printResult(client.Back(GetSerial()))
+			printResult(client.Back(mustGetSerial()))
 		},
 	}
 }

@@ -23,7 +23,7 @@ func newSwipeCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			client := mustCreateClient()
-			printResult(client.Swipe(GetSerial(), b))
+			printResult(client.Swipe(mustGetSerial(), b))
 		},
 	}
 }

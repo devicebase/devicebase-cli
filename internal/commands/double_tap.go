@@ -20,7 +20,7 @@ func newDoubleTapCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			client := mustCreateClient()
-			printResult(client.DoubleTap(GetSerial(), p))
+			printResult(client.DoubleTap(mustGetSerial(), p))
 		},
 	}
 }

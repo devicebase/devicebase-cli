@@ -20,7 +20,7 @@ func newLongPressCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			client := mustCreateClient()
-			printResult(client.LongPress(GetSerial(), p))
+			printResult(client.LongPress(mustGetSerial(), p))
 		},
 	}
 }

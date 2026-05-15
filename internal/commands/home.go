@@ -10,7 +10,7 @@ func newHomeCmd() *cobra.Command {
 		Args:  cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			printResult(client.Home(GetSerial()))
+			printResult(client.Home(mustGetSerial()))
 		},
 	}
 }

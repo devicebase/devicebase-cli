@@ -7,6 +7,7 @@ import (
 
 func newListDevicesCmd() *cobra.Command {
 	var keyword, state string
+	var limit int
 
 	cmd := &cobra.Command{
 		Use:   "list-devices",
@@ -23,6 +24,9 @@ func newListDevicesCmd() *cobra.Command {
 			if state != "" {
 				req.State = &state
 			}
+			if limit > 0 {
+				req.Limit = &limit
+			}
 
 			printResult(client.ListDevices(req))
 		},
@@ -30,6 +34,7 @@ func newListDevicesCmd() *cobra.Command {
 
 	cmd.Flags().StringVar(&keyword, "keyword", "", "Filter by keyword (brand/model/serial/name)")
 	cmd.Flags().StringVar(&state, "state", "", "Filter by state (busy/free/offline)")
+	cmd.Flags().IntVar(&limit, "limit", 10, "Maximum number of devices to return")
 
 	return cmd
 }

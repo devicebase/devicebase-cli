@@ -10,7 +10,7 @@ func newDeviceInfoCmd() *cobra.Command {
 		Args:  cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			printResult(client.DeviceInfo(GetSerial()))
+			printResult(client.DeviceInfo(mustGetSerial()))
 		},
 	}
 }

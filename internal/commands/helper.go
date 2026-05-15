@@ -16,6 +16,14 @@ func mustCreateClient() *api.Client {
 	return c
 }
 
+func mustGetSerial() string {
+	if serial == "" {
+		fmt.Fprintln(os.Stderr, "Error: required flag(s) \"--serial\" not set")
+		os.Exit(1)
+	}
+	return serial
+}
+
 func printResult(data []byte, err error) {
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Error:", err)

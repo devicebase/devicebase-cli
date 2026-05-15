@@ -10,7 +10,7 @@ func newDumpHierarchyCmd() *cobra.Command {
 		Args:  cobra.NoArgs,
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			printResult(client.DumpHierarchy(GetSerial()))
+			printResult(client.DumpHierarchy(mustGetSerial()))
 		},
 	}
 }

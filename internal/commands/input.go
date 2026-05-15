@@ -10,7 +10,7 @@ func newInputCmd() *cobra.Command {
 		Args:  cobra.ExactArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			client := mustCreateClient()
-			printResult(client.InputText(GetSerial(), args[0]))
+			printResult(client.InputText(mustGetSerial(), args[0]))
 		},
 	}
 }

@@ -19,7 +19,7 @@ func newLaunchAppCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			client := mustCreateClient()
-			printResult(client.LaunchApp(GetSerial(), args[0]))
+			printResult(client.LaunchApp(mustGetSerial(), args[0]))
 		},
 	}
 }

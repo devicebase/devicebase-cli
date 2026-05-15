@@ -80,6 +80,7 @@ func (c *Client) Screenshot(serial string) ([]byte, error) {
 type ListDevicesRequest struct {
 	Keyword *string
 	State   *string
+	Limit   *int
 }
 
 func (c *Client) ListDevices(req ListDevicesRequest) ([]byte, error) {
@@ -91,6 +92,9 @@ func (c *Client) ListDevices(req ListDevicesRequest) ([]byte, error) {
 	}
 	if req.State != nil {
 		params = append(params, "state="+*req.State)
+	}
+	if req.Limit != nil {
+		params = append(params, fmt.Sprintf("limit=%d", *req.Limit))
 	}
 
 	if len(params) > 0 {

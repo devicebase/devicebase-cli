@@ -49,7 +49,23 @@ The cross-platform build produces static binaries with no CGO dependencies.
 
 ## Usage
 
-All commands require the `-s <serial>` flag to specify the target device.
+Most commands require the `-s <serial>` flag to specify the target device. The `list-devices` command is an exception.
+
+### Device Management
+
+```bash
+# List all devices (no -s flag required)
+devicebase list-devices
+
+# Filter by keyword (brand/model/serial/name)
+devicebase list-devices --keyword "iPhone"
+
+# Filter by state (busy/free/offline)
+devicebase list-devices --state free
+
+# Combine filters
+devicebase list-devices --keyword "Samsung" --state busy
+```
 
 ### Touch Interactions
 
@@ -97,22 +113,6 @@ devicebase -s <serial> input "Hello World"
 devicebase -s <serial> clear-text
 ```
 
-### Device Management
-
-```bash
-# List all devices
-devicebase list-devices
-
-# Filter by keyword (brand/model/serial/name)
-devicebase list-devices --keyword "iPhone"
-
-# Filter by state (busy/free/offline)
-devicebase list-devices --state free
-
-# Combine filters
-devicebase list-devices --keyword "Samsung" --state busy
-```
-
 ### Device Information
 
 ```bash
@@ -133,7 +133,7 @@ devicebase -s <serial> screenshot -o screenshot.jpg
 
 | Flag | Short | Description |
 |------|-------|-------------|
-| `--serial` | `-s` | Device serial number (required) |
+| `--serial` | `-s` | Device serial number |
 | `--help` | `-h` | Show help |
 | `--version` | | Show version |
 
