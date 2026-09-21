@@ -7,7 +7,7 @@ set -euo pipefail
 # =============================================================================
 
 VERSION="${VERSION:-v2026.5.15}"
-BASE_URL="${BASE_URL:-https://github.com/uusense/devicebase-cli/releases}"
+BASE_URL="${BASE_URL:-https://downloads.devicebase.cn/cli/releases}"
 INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
 BINARY_NAME="devicebase"
 CHECKSUM_URL="${CHECKSUM_URL:-}"
